@@ -1,27 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { CardList } from './components/card-list/card-list.component.jsx'
 import './App.css';
 
 class App extends Component {
-
   constructor() {
     super();
 
     this.state = {
-      monsters: [
-        {
-          name: 'Frankenstein',
-          id: 'asd001'
-        },
-        {
-          name: 'Dracula',
-          id: 'asd002'
-        },
-        {
-          name: 'Zombie',
-          id: 'asd003'
-        }
-      ]
+      monsters: []
     }
   }
 
@@ -34,12 +20,11 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        {
-          this.state.monsters.map( monster => (
-              <h1 key= { monster.id }> { monster.name } </h1> 
-            )
-          )
-        }
+        <CardList name='Gabriel'>
+        { this.state.monsters.map( monster => (
+          <h1 key= { monster.id }> { monster.name } </h1> 
+          ) ) }
+        </CardList>
       </div>
     );
   }
